@@ -88,7 +88,7 @@ const actChart = new Chart(document.getElementById("actChart"), configAct);
 // chart Activation end
 
 // Chart Edu start
-const labelsEdu = ["SMA", "D3", "D4/S1", "S2"];
+const labelsEdu = ["SMA", "D1-D3", "D4/S1", "S2"];
 
 const dataEdu = {
   labels: labelsEdu,
