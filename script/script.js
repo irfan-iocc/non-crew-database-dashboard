@@ -1,7 +1,7 @@
 // Employee Chart Start
 // Setup
 const employeeChartData = {
-  labels: ["Dispatch Center", "FLOE Center", "OAC", "OPS. P&C Center", "Quality & Standard", "System Adm."],
+  labels: ["Dispatch Center", "FLOE Center", "OAC", "OPS. P&C Center", "Quality & Std", "System Adm."],
   datasets: [
     {
       label: "Employee",
@@ -43,7 +43,7 @@ const employeeChart = new Chart(document.getElementById("employeeChart"), employ
 // YS Chart Start
 // Setup
 const ysData = {
-  labels: ["0-2 Years", "2-5 Years", ">5 Years"],
+  labels: ["<1", "1-2", "3-5", "≥5"],
   datasets: [
     {
       data: [50, 100, 65],
@@ -64,29 +64,6 @@ const ysConfig = {
 const ysChart = new Chart(document.getElementById("ysChart"), ysConfig);
 // YS Chart End
 
-// Chart Activation start
-const labelsAct = ["Active", "Inactive"];
-
-const dataAct = {
-  labels: labelsAct,
-  datasets: [
-    {
-      label: "Activation",
-      backgroundColor: ["#C70A80", "#FBCB0A"],
-      data: [45, 23],
-    },
-  ],
-};
-
-const configAct = {
-  type: "doughnut",
-  data: dataAct,
-  options: {},
-};
-
-const actChart = new Chart(document.getElementById("actChart"), configAct);
-// chart Activation end
-
 // Chart Edu start
 const labelsEdu = ["SMA", "D1-D3", "D4/S1", "S2"];
 
@@ -102,7 +79,7 @@ const dataEdu = {
 };
 
 const configEdu = {
-  type: "bar",
+  type: "doughnut",
   data: dataEdu,
   options: {},
 };
@@ -111,21 +88,21 @@ const eduChart = new Chart(document.getElementById("eduChart"), configEdu);
 // chart Edu end
 
 // Chart Contract start
-const labelsCon = ["No Data", "Expired", "1 Month to Exp", "3 Months to Exp", "Valid"];
+const labelsCon = ["Expired", "1 Month to Exp"];
 
 const dataCon = {
   labels: labelsCon,
   datasets: [
     {
       label: "Contract",
-      backgroundColor: ["#FCE2DB", "#B93160", "#B270A2", "#7A4495"],
-      data: [45, 35, 40, 5],
+      backgroundColor: ["#FCE2DB", "#B93160"],
+      data: [45, 35],
     },
   ],
 };
 
 const configCon = {
-  type: "bar",
+  type: "pie",
   data: dataCon,
   options: {},
 };
@@ -134,7 +111,7 @@ const conChart = new Chart(document.getElementById("conChart"), configCon);
 // chart Contract end
 
 // Chart Age Group start
-const labelsAg = ["≤25 Years", "35-35 Years", "35-45 Years", "45-54 Years"];
+const labelsAg = ["≤25", "26-35", "36-45", "46-54", "≥54"];
 
 const dataAg = {
   labels: labelsAg,
@@ -142,7 +119,7 @@ const dataAg = {
     {
       label: "Age Group",
       backgroundColor: ["#231955", "#1F4690", "#E8AA42", "#FFE5B4"],
-      data: [45, 35, 40, 5],
+      data: [45, 35, 40, 5, 4],
     },
   ],
 };
@@ -150,14 +127,29 @@ const dataAg = {
 const configAg = {
   type: "bar",
   data: dataAg,
-  options: {},
+  options: {
+    indexAxis: "y",
+    // Elements options apply to all of the options unless overridden in a dataset
+    // In this case, we are setting the border of each horizontal bar to be 2px wide
+    elements: {
+      bar: {
+        borderWidth: 2,
+      },
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "right",
+      },
+    },
+  },
 };
 
 const agChart = new Chart(document.getElementById("agChart"), configAg);
 // chart Age Group end
 
 // Turnover start
-const labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 const data = {
   labels: labels,

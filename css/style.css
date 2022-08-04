@@ -1,4 +1,12 @@
 /* Style the tab */
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.chart-ti {
+  font-size: 16px;
+}
+
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
