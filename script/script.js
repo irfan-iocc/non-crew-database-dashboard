@@ -37,7 +37,7 @@ const employeeChartconfig = {
 };
 
 //
-const employeeChart = new Chart(document.getElementById("employeeChart"), employeeChartconfig);
+var employeeChart = new Chart(document.getElementsByClassName("employeeChart"), employeeChartconfig);
 // Employee Chart End
 
 // YS Chart Start
@@ -213,5 +213,21 @@ const config = {
   options: {},
 };
 
-const myChart = new Chart(document.getElementById("myChart"), config);
+// const myChart = new Chart(document.getElementById("myChart"), config);
+var myChart = new Chart(document.getElementsByClassName("myChart"), config);
+// var myChart = document.getElementsByClassName("myChart");
+// console.log(myChart[0]);
+
+$('#tgr1').on('click', function(){
+  myChart.destroy();
+  $('#canvasTest').html('');
+  console.log('ok');
+  var elm = $('.myChart').clone();
+  // var elm = document.getElementsByClassName("myChart");
+  var prt = elm.parent();
+  console.log(elm[0]);
+  $('#canvasTest').html(elm);
+  myChart = new Chart(document.getElementsByClassName("myChart"), config);
+
+})
 // Turnover end

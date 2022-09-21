@@ -107,13 +107,14 @@
               <div class="shadow p-3 mt-3 bg-body bg-opacity-75 rounded">
                 <div class="row">
                   <div class="col-md-11"><p class="text-center chart-ti">Active Employees Per Division</p></div>
+                  
                   <div class="col-md-1">
-                    <a href="" type="button" data-bs-toggle="modal" data-bs-target="#filterEmp"><i class="fa-solid fa-filter text-dark"></i></a>
+                    <a id="tgr1" href="" type="button" data-bs-toggle="modal" data-bs-target="#filterEmp"><i class="fa-solid fa-maximize text-dark"></i></a>
                   </div>
                 </div>
 
                 <div>
-                  <canvas id="employeeChart"></canvas>
+                  <canvas class="employeeChart"></canvas>
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@
                 </div>
 
                 <div>
-                  <canvas id="myChart"></canvas>
+                  <canvas class="myChart"></canvas>
                 </div>
               </div>
             </div>
@@ -375,74 +376,12 @@
               <h5 class="modal-title" id="exampleModalLabel">Employee</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body mb-2">
-              <div class="row">
-                <div class="col-6">
-                  <input type="month" class="form-control" placeholder="Select Periode" />
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Division</option>
-                    <option value="1">Ops. Planning & Control Center</option>
-                    <option value="2">Dispatch Center</option>
-                    <option value="3">Ops. Administration Center</option>
-                    <option value="4">Floe Center</option>
-                    <option value="5">Quality & Standard</option>
-                    <option value="6">System Administrator</option>
-                  </select>
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Unit</option>
-                    <option value="1">Duty Manager</option>
-                    <option value="2">Movement Control</option>
-                    <option value="3">International Flight</option>
-                    <option value="4">Crew Tracking</option>
-                    <option value="5">Crew Planning - Pairing</option>
-                    <option value="6">Crew Planning - Rostering</option>
-                  </select>
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Gender</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                  </select>
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Education</option>
-                    <option value="1">D4/S1</option>
-                    <option value="2">D3</option>
-                    <option value="3">SMA Sederajat</option>
-                  </select>
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Year of Service</option>
-                    <option value="1">0-2 Years</option>
-                    <option value="2">2-5 Years</option>
-                    <option value="3">>5 Years</option>
-                  </select>
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Age Group</option>
-                    <option value="1">≤25 Years</option>
-                    <option value="2">25-35 Years</option>
-                    <option value="3">35-45 Years</option>
-                    <option value="4">45-54 Years</option>
-                  </select>
-                </div>
-                <div class="col-6 mb-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Contract</option>
-                    <option value="1">Valid (More than 3 Months to Expire)</option>
-                    <option value="2">3 Months to Expire</option>
-                    <option value="3">a Month to Expire</option>
-                    <option value="4">Expired</option>
-                    <option value="5">No Data</option>
-                  </select>
+            <div class="modal-body">
+              <div class="col-md-12">
+                <div class="shadow p-3 mt-3 bg-body bg-opacity-75 rounded">  
+                  <div id="canvasTest">
+                    <!-- <canvas id="employeeChart"></canvas> -->
+                  </div>
                 </div>
               </div>
             </div>
